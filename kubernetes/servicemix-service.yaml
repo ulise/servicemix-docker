@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: servicemix
+  managedFields:
+  - apiVersion: v1
+    fieldsType: FieldsV1
+  name: servicemix-service
+  namespace: default
+spec:
+  ports:
+  - port: 8181
+    protocol: TCP
+    targetPort: 8181
+  selector:
+    octopusexport: OctopusExport
+  sessionAffinity: None
+  type: ClusterIP
